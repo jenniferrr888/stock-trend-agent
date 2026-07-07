@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stock Trend Insight Agent</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Simple Agent Demo</p>
+          <h1>股票趋势洞察 Agent</h1>
+          <p class="sub">输入股票代码，Agent 会读取近期价格、计算指标，并给出趋势判断。</p>
+        </div>
+      </section>
+
+      <section class="panel controls">
+        <label>
+          股票代码
+          <input id="tickers" value="AAPL, MSFT, NVDA" />
+        </label>
+        <label>
+          数据范围
+          <select id="days">
+            <option value="60">近 60 天</option>
+            <option value="90" selected>近 90 天</option>
+            <option value="180">近 180 天</option>
+          </select>
+        </label>
+        <button id="run">分析趋势</button>
+      </section>
+
+      <section id="status" class="status">等待输入。</section>
+      <section id="results" class="grid"></section>
+
+      <section class="panel process">
+        <h2>这个 Agent 是怎么做出来的</h2>
+        <div class="steps">
+          <div><b>1. 输入</b><span>用户输入股票代码</span></div>
+          <div><b>2. 工具</b><span>读取近期价格数据</span></div>
+          <div><b>3. 分析</b><span>计算均线、涨跌幅、波动率、RSI</span></div>
+          <div><b>4. 输出</b><span>生成趋势标签和解释</span></div>
+        </div>
+      </section>
+    </main>
+    <script src="/static/app.js"></script>
+  </body>
+</html>
